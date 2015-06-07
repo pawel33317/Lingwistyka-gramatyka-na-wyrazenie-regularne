@@ -1,8 +1,5 @@
-# Lingwistyka-gramatyka-na-wyrazenie-regularne
-Lingwistyka gramatyka na wyra≈ºenie regularne - analizator sk≈Çadni
-
 /////////////////////////////////////////////
-//////GRAMATYKA BEZ NAWIASOW Z U≈ÅAMKAMI//////
+//////GRAMATYKA BEZ NAWIASOW Z U£AMKAMI//////
 /////////////////////////////////////////////
 S ::= W ; Z		
 Z ::= W ; Z | $ 	
@@ -26,10 +23,10 @@ C::= (0|..|9)
 O::= (*|:|+|-|^)
 S::= (0|..|9){(0|..|9)}[.(0|..|9){(0|..|9)}]{(*|:|+|-|^)(0|..|9){(0|..|9)}[.(0|..|9){(0|..|9)}]};{(0|..|9){(0|..|9)}[.(0|..|9){(0|..|9)}]{(*|:|+|-|^)(0|..|9){(0|..|9)}[.(0|..|9){(0|..|9)}]};}
 
-od poczƒÖtku				--> ^
-C{C}					--> [0-9]+		--> raz lub wiƒôcej
+od poczπtku				--> ^
+C{C}					--> [0-9]+		--> raz lub wiÍcej
 [.C{C}]					--> (\.[0-9]+)?		--> raz lub 0 
-{OC{C}[.C{C}]}				--> ((\*|\:|\+|\-|\^)[0-9]+(\.[0-9]+)?)*	--> 0 lub wiƒôcej
+{OC{C}[.C{C}]}				--> ((\*|\:|\+|\-|\^)[0-9]+(\.[0-9]+)?)*	--> 0 lub wiÍcej
 koniec 					--> $
 C{C}[.C{C}]{OC{C}[.C{C}]};  
 	{C{C}[.C{C}]{OC{C}[.C{C}]};} 
@@ -39,13 +36,13 @@ C{C}[.C{C}]{OC{C}[.C{C}]};
 
 
 /////////////////////////////////////////////
-//////GRAMATYKA Z NAWIASAMI Z U≈ÅAMKAMI///////
+//////GRAMATYKA Z NAWIASAMI Z U£AMKAMI///////
 /////////////////////////////////////////////
 S ::= W ; Z		
 Z ::= W ; Z | $ 	
 W ::= PW'		
 W'::= OW | $
-P ::= R | <W>		P ::= R | (W)		() zastƒÖpione <> bo mi siƒô myli
+P ::= R | <W>		P ::= R | (W)		() zastπpione <> bo mi siÍ myli
 R ::= LR'
 R'::= .L | $
 L ::= CL'
@@ -60,9 +57,9 @@ L' = C{C}
 L ::= CL'
 L ::= C{C} 
 R'::= .L | $
-R'::= [.C{C}]			=> wystƒÖpi przecinek z cyfrƒÖ lub wiƒôcej cyfr LUB NIC 
+R'::= [.C{C}]			=> wystπpi przecinek z cyfrπ lub wiÍcej cyfr LUB NIC 
 R ::= LR'
-R ::= C{C}[.C{C}]		=> wystƒÖpi cyfra a mo≈ºe wiele i mo≈ºe po nich . i cyfra lub wiele
+R ::= C{C}[.C{C}]		=> wystπpi cyfra a moøe wiele i moøe po nich . i cyfra lub wiele
 W'::= OW | $
 W'::= OPW' | $
 W'::= {OP}
@@ -74,5 +71,5 @@ W ::= (R | <W>){O(R | <W>)}
 S ::= W ; {W} 
 W ::= (C{C}[.C{C}] | <W>){O(C{C}[.C{C}] | <W>)}
 
-Nie da siƒô zrobiƒá wyra≈ºenia regularnego
+Nie da siÍ zrobiÊ wyraøenia regularnego
 
